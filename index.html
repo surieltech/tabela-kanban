@@ -9,161 +9,170 @@
 </head>
 
 <body>
-    <main class="kanban">
 
-        <!-- Coluna 1: To Do -->
-        <div class="kanban-column" data-column="todo">
-            <div class="kanban-title">
-                <h2>To Do</h2>
-            </div>
-            
-            <div class="add-card">
-                <button class="btn-add">
-                    <i class="fa-solid fa-plus"></i> Add Task
-                </button>   
-            </div>
-
-            <div class="kanban-cards">
-                <div class="card">
-                    <div class="badge badge-high">
-                        <span>High Priority</span>
-                    </div>
-
-                    <p class="card-title">Revisar documentação do projeto</p>
-
-                    <div class="card-infos">
-                        <div class="card-icons">
-                            <i class="fa-regular fa-comment"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                        </div>
-
-                        <div class="user">
-                            <img src="" alt="foto de perfil">
-                        </div>
-                    </div>
-
-                    <button class="btn-delete" title="Excluir tarefa">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna 2: In Progress -->
-        <div class="kanban-column" data-column="progress">
-            <div class="kanban-title">
-                <h2>In Progress</h2>
-            </div>
-            
-            <div class="add-card">
-                <button class="btn-add">
-                    <i class="fa-solid fa-plus"></i> Add Task
-                </button>   
-            </div>
-
-            <div class="kanban-cards">
-                <div class="card">
-                    <div class="badge badge-medium">
-                        <span>Medium Priority</span>
-                    </div>
-
-                    <p class="card-title">Desenvolver funcionalidade de busca</p>
-                    
-                    <div class="card-infos">
-                        <div class="card-icons">
-                            <i class="fa-regular fa-comment"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                        </div>
-
-                        <div class="user">
-                            <img src="" alt="foto de perfil">
-                        </div>
-                    </div>
-
-                    <button class="btn-delete" title="Excluir tarefa">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna 3: Testing -->
-        <div class="kanban-column" data-column="testing">
-            <div class="kanban-title">
-                <h2>Testing</h2>
-            </div>
-            
-            <div class="add-card">
-                <button class="btn-add">
-                    <i class="fa-solid fa-plus"></i> Add Task
-                </button>   
-            </div>
-
-            <div class="kanban-cards">
-                <div class="kanban-cards">
-                    <!-- Exemplo de card vazio - sem tarefas -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna 4: Fixing -->
-        <div class="kanban-column" data-column="fixing">
-            <div class="kanban-title">
-                <h2>Fixing</h2>
-            </div>
-            
-            <div class="add-card">
-                <button class="btn-add">
-                    <i class="fa-solid fa-plus"></i> Add Task
-                </button>   
-            </div>
-
-            <div class="kanban-cards">
-                <div class="kanban-cards">
-                    <!-- Cards serão inseridos aqui -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna 5: Approved/Done -->
-        <div class="kanban-column" data-column="done">
-            <div class="kanban-title">
-                <h2>Approved/Done</h2>
-            </div>
-            
-            <div class="add-card">
-                <button class="btn-add">
-                    <i class="fa-solid fa-plus"></i> Add Task
-                </button>   
-            </div>
-
-            <div class="kanban-cards">
-                <div class="card">
-                    <div class="badge badge-low">
-                        <span>Low Priority</span>
-                    </div>
-
-                    <p class="card-title">Testes unitários concluídos</p>
-
-                    <div class="card-infos">
-                        <div class="card-icons">
-                            <i class="fa-regular fa-comment"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                        </div>
-
-                        <div class="user">
-                            <img src="" alt="foto de perfil">
-                        </div>
-                    </div>
-
-                    <button class="btn-delete" title="Excluir tarefa">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+    <div class="container">
         
-    </main>
+        <header class="kanban-header">
+            <h1>📋 Meu Kanban</h1>
+            <p>Gerencie suas tarefas de forma visual</p>
+        </header>
+
+        <main class="kanban">
+
+            <!-- Coluna 1: To Do -->
+            <div class="kanban-column" data-column="todo">
+                <div class="kanban-title">
+                    <h2>To Do</h2>
+                </div>
+                
+                <div class="add-card">
+                    <button class="btn-add">
+                        <i class="fa-solid fa-plus"></i> Add Task
+                    </button>   
+                </div>
+
+                <div class="kanban-cards">
+                    <div class="card">
+                        <div class="badge badge-high">
+                            <span>High Priority</span>
+                        </div>
+
+                        <p class="card-title">Revisar documentação do projeto</p>
+
+                        <div class="card-infos">
+                            <div class="card-icons">
+                                <i class="fa-regular fa-comment"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                            </div>
+
+                            <div class="user">
+                                <img src="" alt="foto de perfil">
+                            </div>
+                        </div>
+
+                        <button class="btn-delete" title="Excluir tarefa">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2: In Progress -->
+            <div class="kanban-column" data-column="progress">
+                <div class="kanban-title">
+                    <h2>In Progress</h2>
+                </div>
+                
+                <div class="add-card">
+                    <button class="btn-add">
+                        <i class="fa-solid fa-plus"></i> Add Task
+                    </button>   
+                </div>
+
+                <div class="kanban-cards">
+                    <div class="card">
+                        <div class="badge badge-medium">
+                            <span>Medium Priority</span>
+                        </div>
+
+                        <p class="card-title">Desenvolver funcionalidade de busca</p>
+                        
+                        <div class="card-infos">
+                            <div class="card-icons">
+                                <i class="fa-regular fa-comment"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                            </div>
+
+                            <div class="user">
+                                <img src="" alt="foto de perfil">
+                            </div>
+                        </div>
+
+                        <button class="btn-delete" title="Excluir tarefa">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Testing -->
+            <div class="kanban-column" data-column="testing">
+                <div class="kanban-title">
+                    <h2>Testing</h2>
+                </div>
+                
+                <div class="add-card">
+                    <button class="btn-add">
+                        <i class="fa-solid fa-plus"></i> Add Task
+                    </button>   
+                </div>
+
+                <div class="kanban-cards">
+                    <div class="kanban-cards">
+                        <!-- Exemplo de card vazio - sem tarefas -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 4: Fixing -->
+            <div class="kanban-column" data-column="fixing">
+                <div class="kanban-title">
+                    <h2>Fixing</h2>
+                </div>
+                
+                <div class="add-card">
+                    <button class="btn-add">
+                        <i class="fa-solid fa-plus"></i> Add Task
+                    </button>   
+                </div>
+
+                <div class="kanban-cards">
+                    <div class="kanban-cards">
+                        <!-- Cards serão inseridos aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 5: Approved/Done -->
+            <div class="kanban-column" data-column="done">
+                <div class="kanban-title">
+                    <h2>Approved/Done</h2>
+                </div>
+                
+                <div class="add-card">
+                    <button class="btn-add">
+                        <i class="fa-solid fa-plus"></i> Add Task
+                    </button>   
+                </div>
+
+                <div class="kanban-cards">
+                    <div class="card">
+                        <div class="badge badge-low">
+                            <span>Low Priority</span>
+                        </div>
+
+                        <p class="card-title">Testes unitários concluídos</p>
+
+                        <div class="card-infos">
+                            <div class="card-icons">
+                                <i class="fa-regular fa-comment"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                            </div>
+
+                            <div class="user">
+                                <img src="" alt="foto de perfil">
+                            </div>
+                        </div>
+
+                        <button class="btn-delete" title="Excluir tarefa">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
 </body>
 
 </html>
