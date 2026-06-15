@@ -71,8 +71,9 @@ function renderColumn(columnId) {
     
     cardsContainer.innerHTML = '';
     
+    //mensagem caso a coluna esteja vazia
     if (tasks[columnId].length === 0) {
-        cardsContainer.innerHTML = '<div class="empty-message">📭 Nenhuma tarefa</div>';
+        cardsContainer.innerHTML = '<div class="empty-message">📭 No task yet</div>';
         return;
     }
     
@@ -94,14 +95,15 @@ function createCardElement(task, columnId) {
     };
     
     const priorityText = {
-        high: 'Alta',
-        medium: 'Média',
-        low: 'Baixa'
+        high: 'High',
+        medium: 'Medium',
+        low: 'Low'
     };
     
+    //modelo de card a ser criado
     card.innerHTML = `
         <div class="badge ${priorityClass[task.priority]}">
-            ${priorityText[task.priority]} Prioridade
+            ${priorityText[task.priority]} Priority
         </div>
         <p class="card-title">${escapeHtml(task.title)}</p>
         <div class="card-infos">
@@ -109,22 +111,19 @@ function createCardElement(task, columnId) {
                 <i class="fa-regular fa-comment"></i>
                 <i class="fa-solid fa-paperclip"></i>
             </div>
-            <div class="user">
-                <img src="https://ui-avatars.com/api/?background=667eea&color=fff&rounded=true" alt="user">
-            </div>
         </div>
         <button class="btn-delete">
             <i class="fa-solid fa-trash"></i>
         </button>
     `;
     
-    // Evento de deletar
+    //evento de deletar
     card.querySelector('.btn-delete').addEventListener('click', (e) => {
         e.stopPropagation();
         deleteTask(task.id, columnId);
     });
     
-    // Drag events
+    //drag events
     card.addEventListener('dragstart', handleDragStart);
     card.addEventListener('dragend', handleDragEnd);
     
@@ -141,11 +140,12 @@ function escapeHtml(text) {
 // CRUD OPERATIONS
 // ============================================
 
+//criando uma nova task
 function addTask(columnId) {
-    const title = prompt('Título da tarefa:');
+    const title = prompt('New Task:');
     if (!title || !title.trim()) return;
     
-    const priority = prompt('Prioridade (alta/media/baixa):', 'media').toLowerCase();
+    const priority = prompt('Priority (alta | media | baixa):', 'media').toLowerCase();
     let normalizedPriority = 'medium';
     
     if (priority === 'alta' || priority === 'high') normalizedPriority = 'high';
@@ -164,7 +164,7 @@ function addTask(columnId) {
 }
 
 function deleteTask(taskId, columnId) {
-    if (confirm('Remover esta tarefa?')) {
+    if (confirm('Remove this task?')) {
         tasks[columnId] = tasks[columnId].filter(task => task.id !== taskId);
         saveData();
         renderColumn(columnId);
@@ -193,7 +193,7 @@ let draggedFromColumn = null;
 function handleDragStart(e) {
     draggedTaskId = parseInt(this.getAttribute('data-id'));
     
-    // Descobrir de qual coluna veio
+    //descobrindo de qual coluna veio
     const column = this.closest('.kanban-column');
     draggedFromColumn = column.getAttribute('data-column');
     
@@ -206,7 +206,7 @@ function handleDragEnd(e) {
     draggedTaskId = null;
     draggedFromColumn = null;
     
-    // Remover highlight de todas colunas
+    //remover highlight de todas colunas
     document.querySelectorAll('.kanban-column').forEach(col => {
         col.classList.remove('drag-over');
     });
@@ -240,7 +240,7 @@ function handleDrop(e, toColumn) {
 // ============================================
 
 function setupEventListeners() {
-    // Botões de adicionar
+    //botões de adicionar
     document.querySelectorAll('.btn-add').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const column = e.target.closest('.kanban-column');
@@ -249,7 +249,7 @@ function setupEventListeners() {
         });
     });
     
-    // Eventos de drag nas colunas
+    //eventos de drag nas colunas
     document.querySelectorAll('.kanban-column').forEach(column => {
         column.addEventListener('dragover', handleDragOver);
         column.addEventListener('dragleave', handleDragLeave);
