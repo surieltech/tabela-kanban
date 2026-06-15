@@ -168,3 +168,24 @@ body {
 .btn-delete:hover {
     color: red;
 }
+
+/* Estilos para drag and drop */
+.kanban-column[dragover] {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    background: rgba(255,255,255,0.5);
+    border-radius: 8px;
+}
+
+.card {
+    cursor: grab;
+}
+
+.card:active {
+    cursor: grabbing;
+}
