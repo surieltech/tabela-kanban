@@ -74,3 +74,15 @@ O layout se adapta automaticamente para diferentes tamanhos de tela:
 
 - 💻 **Desktop** - 5 colunas lado a lado
 - 📱 **Mobile** - Colunas empilhadas verticalmente
+
+## 🧩 Melhorias futuras
+
+- Poder comentar observações nas taks;
+- Anexar documentos/imagens;
+- Pode trocar o tema da aplicação;
+- Criar um sistema com diferente usuários.
+
+<!-- ## 📝 Licença
+
+Este projeto é de código aberto e pode ser usado livremente para fins educacionais ou pessoais.  
+Sinta-se à vontade para modificar e distribuir. -->
